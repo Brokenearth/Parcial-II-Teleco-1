@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Configura tu endpoint backend aquí
-  const BACKEND_URL = 'https://httpbin.org/post';
+  const BACKEND_URL = 'http://localhost:5293/login';
   const form = document.querySelector('form');
   if (!form) return;
 
@@ -34,17 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    const identifier = (emailInput?.value || '').trim();
+    const username = (emailInput?.value || '').trim();
     const password = (passwordInput?.value || '').trim();
 
-    if (!identifier || !password) {
+    if (!username || !password) {
       alert('Por favor ingresa tus credenciales.');
       return;
     }
 
     setLoading(true);
     try {
-      const result = await postLogin({ identifier, password });
+      const result = await postLogin({ username, password });
       alert('Inicio de sesión exitoso');
     } catch (err) {
       alert(err.message || 'No se pudo iniciar sesión');

@@ -10,12 +10,17 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: #f0f2f5;
   color: #1c1e21;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .content {
   max-width: 980px;
-  margin: 80px auto;
-  padding: 0 16px;
+  margin: auto;
+  padding: 10px 16px;
 }
 
 .flex-div {
@@ -113,117 +118,26 @@ form .create-account {
 
 form .create-account:hover { filter: brightness(0.98); cursor: pointer; }
 
-/* //.........Media Query.........// */
-
-@media (max-width: 500px) {
-  html {
-    font-size: 60%;
+@media (max-width: 1060px) {
+  .flex-div {
+    flex-direction: column;
   }
-
+  
   .name-content {
     margin: 0;
     text-align: center;
   }
-
+  
   form {
     width: 100%;
     max-width: 396px;
   }
 
-  form input {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-
-  form .login {
-    font-size: 1.5rem;
-  }
-
-  form a {
-    font-size: 1.5rem;
-  }
-
-  form .create-account {
-    font-size: 1.5rem;
-  }
-
-  .flex-div { flex-direction: column; }
-}
-
-@media (min-width: 501px) and (max-width: 768px) {
-  html {
-    font-size: 60%;
-  }
-
-  .name-content {
-    margin: 0;
-    text-align: center;
-  }
-
-  form {
-    width: 100%;
-    max-width: 396px;
-  }
-
-  form input {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-
-  form .login {
-    font-size: 1.5rem;
-  }
-
-  form a {
-    font-size: 1.5rem;
-  }
-
-  form .create-account {
-    font-size: 1.5rem;
-  }
-
-  .flex-div { flex-direction: column; }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-  html {
-    font-size: 60%;
-  }
-
-  .name-content {
-    margin: 0;
-    text-align: center;
-  }
-
-  form {
-    width: 100%;
-    max-width: 396px;
-  }
-
-  form input {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-
-  form .login {
-    font-size: 1.5rem;
-  }
-
-  form a {
-    font-size: 1.5rem;
-  }
-
-  form .create-account {
-    font-size: 1.5rem;
-  }
-
-  .flex-div { flex-direction: column; }
-
-  @media (orientation: landscape) and (max-height: 500px) {
-    .header {
-      height: 90vmax;
-    }
-  }  
+  /* Se eliminó el 'font-size: 60%' y el 'font-size: 1.5rem' 
+    ya que no estaban en el HTML/CSS original del parcial 
+    y pueden causar problemas de escalado. 
+    Se mantiene la estructura responsive.
+  */
 }
 
 
